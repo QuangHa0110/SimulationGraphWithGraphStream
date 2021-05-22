@@ -13,10 +13,10 @@ import java.util.ArrayList;
 
 public class DataInput {
 	private ArrayList<ArrayList<Integer>> danhSachDinh= new ArrayList<ArrayList<Integer>>();
-	
 	private String path;
 	private File file;
 	private int maxDinh=0;
+	private ArrayList<ArrayList<Integer>> listLastNode=new ArrayList<ArrayList<Integer>>();
 	
 	public DataInput(String path) {
 		super();
@@ -42,10 +42,15 @@ public class DataInput {
 				}
 				
 			}
+			
 			for(int i=0;i<=maxDinh;i++) {
 				ArrayList<Integer> list = new ArrayList<>();
 				danhSachDinh.add(list);
+				ArrayList<Integer> list2 = new ArrayList<>();
+				listLastNode.add(list2);
 			}
+			fileReader.close();
+			bufferedReader.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,6 +58,8 @@ public class DataInput {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	
 		
 	}
 	public void readInput() {
@@ -70,6 +77,8 @@ public class DataInput {
 					}
 					
 				}
+				bufferedReader.close();
+				fileReader.close();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -111,6 +120,16 @@ public class DataInput {
 	public void setPath(String path) {
 		this.path = path;
 	}
+
+	public ArrayList<ArrayList<Integer>> getListLastNode() {
+		return listLastNode;
+	}
+
+	public void setListLastNode(ArrayList<ArrayList<Integer>> listLastNode) {
+		this.listLastNode = listLastNode;
+	}
+	
+	
 	
 	
 	

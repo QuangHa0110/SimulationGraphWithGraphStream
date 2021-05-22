@@ -21,7 +21,7 @@ public class BFS {
 
 	public void bfs_u(int u) {
 		Q.add(u);
-		color[u] = 'G';
+		color[u] = 'G';  // G là đã thăm nhưng chưa duyệt xong
 	
 		while (!Q.isEmpty()) {
 			int v = Q.peek();
@@ -45,6 +45,13 @@ public class BFS {
 		}
 		
 	}
+	public static void main(String[] args) {
+		String pahtString ="E:\\OneDrive - Hanoi University of Science and Technology\\Desktop\\input.txt";
+		DataInput dataInput = new DataInput(pahtString);
+	BFS bfs = new BFS(dataInput);
+	bfs.bfs(7);
+		
+	}
 
 	public int[] getP() {
 		return p;
@@ -66,6 +73,8 @@ public class BFS {
 		}
 				
 	}
+	
+	
 	
 	
 
